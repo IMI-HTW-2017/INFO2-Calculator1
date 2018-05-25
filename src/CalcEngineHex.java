@@ -25,9 +25,4 @@ public class CalcEngineHex extends CalcEngine {
     public String getDisplayValueHex() {
         return Integer.toHexString(super.getDisplayValue());
     }
-
-    @Override
-    public int getDisplayValue() {
-        return super.getDisplayValue();
-    }
 }

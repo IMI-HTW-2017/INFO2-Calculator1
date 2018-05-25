@@ -30,6 +30,8 @@ public class UserInterfaceHex extends UserInterface {
         addButton(buttonPanel, "0xE");
         addButton(buttonPanel, "0xF");
 
+        //Remove info text before adding new button panel
+        frame.getContentPane().remove(frame.getContentPane().getComponentCount() - 1);
         frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
         JCheckBox checkBox = new JCheckBox("Hex Mode?", true);
