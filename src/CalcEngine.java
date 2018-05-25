@@ -58,7 +58,7 @@ public class CalcEngine
             displayValue = number;
 
             if (minus) {
-                displayValue *= -1;
+                displayValue = -displayValue;
                 minus = false;
             }
 
