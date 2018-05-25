@@ -23,12 +23,12 @@ public class UserInterfaceHex extends UserInterface {
     private void addHexButtons() {
         buttonPanel = new JPanel(new GridLayout(2, 3));
 
-        addButton(buttonPanel, "0xA");
-        addButton(buttonPanel, "0xB");
-        addButton(buttonPanel, "0xC");
-        addButton(buttonPanel, "0xD");
-        addButton(buttonPanel, "0xE");
-        addButton(buttonPanel, "0xF");
+        addButton(buttonPanel, "a");
+        addButton(buttonPanel, "b");
+        addButton(buttonPanel, "c");
+        addButton(buttonPanel, "d");
+        addButton(buttonPanel, "e");
+        addButton(buttonPanel, "f");
 
         //Remove info text before adding new button panel
         frame.getContentPane().remove(frame.getContentPane().getComponentCount() - 1);
@@ -47,13 +47,13 @@ public class UserInterfaceHex extends UserInterface {
 
         String command = event.getActionCommand();
 
-        if (command.equals("0xA") ||
-            command.equals("0xB") ||
-            command.equals("0xC") ||
-            command.equals("0xD") ||
-            command.equals("0xE") ||
-            command.equals("0xF")) {
-            int number = Integer.decode(command);
+        if (command.equals("a") ||
+            command.equals("b") ||
+            command.equals("c") ||
+            command.equals("d") ||
+            command.equals("e") ||
+            command.equals("f")) {
+            int number = Integer.decode("0x" + command);
             if (isHexModeActive) {
                 calcEngineHex.numberPressedHex(number);
             } else {

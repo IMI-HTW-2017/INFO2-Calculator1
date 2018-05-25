@@ -13,10 +13,15 @@ public class Calculator
     /**
      * Create a new calculator and show it.
      */
-    public Calculator()
+    public Calculator(boolean runInHexMode)
     {
-        engine = new CalcEngine();
-        gui = new UserInterface(engine);
+        if (runInHexMode) {
+            engine = new CalcEngineHex();
+            gui = new UserInterfaceHex((CalcEngineHex) engine);
+        } else {
+            engine = new CalcEngine();
+            gui = new UserInterface(engine);
+        }
     }
 
     /**
@@ -28,6 +33,6 @@ public class Calculator
     }
 
     public static void main(String[] args) {
-        new Calculator();
+        new Calculator(Boolean.parseBoolean(args[0]));
     }
 }
