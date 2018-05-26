@@ -91,7 +91,6 @@ public class UserInterfaceHex extends UserInterface {
         if (command.equals("Hex Mode?"))
             toggleHexMode();
 
-
         redisplay();
     }
 
