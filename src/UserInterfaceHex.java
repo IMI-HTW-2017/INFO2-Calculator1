@@ -81,5 +81,6 @@ public class UserInterfaceHex extends UserInterface {
         redisplay();
 
         buttonPanel.setVisible(isHexModeActive);
+        frame.pack();
     }
 }
