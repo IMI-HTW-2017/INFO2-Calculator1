@@ -80,10 +80,6 @@ public class UserInterfaceHex extends UserInterface {
 
         redisplay();
 
-        if (isHexModeActive) {
-            buttonPanel.setVisible(true);
-        } else {
-            buttonPanel.setVisible(false);
-        }
+        buttonPanel.setVisible(isHexModeActive);
     }
 }
