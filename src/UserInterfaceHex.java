@@ -43,25 +43,54 @@ public class UserInterfaceHex extends UserInterface {
 
     @Override
     public void actionPerformed(ActionEvent event) {
-        super.actionPerformed(event);
-
         String command = event.getActionCommand();
 
-        if (command.equals("a") ||
-            command.equals("b") ||
-            command.equals("c") ||
-            command.equals("d") ||
-            command.equals("e") ||
-            command.equals("f")) {
-            int number = Integer.decode("0x" + command);
-            if (isHexModeActive) {
-                calcEngineHex.numberPressedHex(number);
-            } else {
-                calc.numberPressed(number);
+        if (!isHexModeActive)
+            super.actionPerformed(event);
+        else {
+            switch (command) {
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case "a":
+                case "b":
+                case "c":
+                case "d":
+                case "e":
+                case "f":
+                    calcEngineHex.numberPressedHex(Integer.decode("0x" + command));
+                    break;
+                case "+":
+                    calc.plus();
+                    break;
+                case "-":
+                    calc.minus();
+                    break;
+                case "=":
+                    calc.equals();
+                    break;
+                case "C":
+                    calc.clear();
+                    break;
+                case "x":
+                    calc.multiply();
+                    break;
+                case "/":
+                    calc.divide();
+                    break;
             }
-        } else if (command.equals("Hex Mode?")) {
-            toggleHexMode();
         }
+
+        if (command.equals("Hex Mode?"))
+            toggleHexMode();
+
 
         redisplay();
     }
